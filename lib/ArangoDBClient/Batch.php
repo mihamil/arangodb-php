@@ -17,6 +17,7 @@ namespace ArangoDBClient;
  * @package   ArangoDBClient
  * @since     1.1
  */
+#[\AllowDynamicProperties]
 class Batch
 {
     /**

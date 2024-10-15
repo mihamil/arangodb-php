@@ -48,7 +48,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class GraphExtendedTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

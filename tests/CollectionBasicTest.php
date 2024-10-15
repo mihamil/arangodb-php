@@ -16,7 +16,7 @@ namespace ArangoDBClient;
  * @property CollectionHandler collectionHandler
  */
 class CollectionBasicTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

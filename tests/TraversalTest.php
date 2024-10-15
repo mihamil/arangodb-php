@@ -54,7 +54,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class TraversalTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

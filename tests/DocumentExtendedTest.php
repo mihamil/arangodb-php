@@ -21,7 +21,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class DocumentExtendedTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 
@@ -63,7 +63,7 @@ class DocumentExtendedTest extends
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
         static::assertEquals('someValue', $resultingDocument->someAttribute);
         static::assertEquals('someOtherValue', $resultingDocument->someOtherAttribute);
 
@@ -238,7 +238,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             'someValue', $resultingDocument->someAttribute, 'Should be :someValue, is: ' . $resultingDocument->someAttribute
@@ -274,7 +274,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals(['foo' => 'bar', 'bark' => 'qux', 'piff' => 'paff'], $resultingDocument->someAttribute);
         $response = $documentHandler->remove($resultingDocument);
@@ -304,7 +304,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals(['piff' => 'paff'], $resultingDocument->someAttribute);
         $response = $documentHandler->remove($resultingDocument);
@@ -336,7 +336,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             null, $resultingDocument->someAttribute, 'Should be : null, is: ' . $resultingDocument->someAttribute
@@ -445,7 +445,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             'someValue2', $resultingDocument->someAttribute, 'Should be :someValue2, is: ' . $resultingDocument->someAttribute
@@ -555,7 +555,7 @@ class DocumentExtendedTest extends
         static::assertTrue($result);
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
         static::assertEquals('someValue2', $resultingDocument->someAttribute);
         static::assertEquals('someOtherValue2', $resultingDocument->someOtherAttribute);
@@ -654,7 +654,7 @@ class DocumentExtendedTest extends
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
 
         // Set some new values on the attributes and include the revision in the _rev attribute
@@ -757,7 +757,7 @@ class DocumentExtendedTest extends
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
 
         // Set some new values on the attributes and include the revision in the _rev attribute
@@ -865,7 +865,7 @@ class DocumentExtendedTest extends
 
         $resultingDocument = $documentHandler->get($this->collection->getName(), $documentId);
 
-        static::assertObjectHasAttribute('_id', $resultingDocument, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingDocument, '_id field should exist, empty or with an id');
 
 
         // Set some new values on the attributes and include the revision in the _rev attribute

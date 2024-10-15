@@ -21,7 +21,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class StreamingTransactionTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 
@@ -484,13 +484,13 @@ class StreamingTransactionTest extends
         $doc = $documentHandler->getById($trxCollection, "test");
         static::assertEquals('test', $doc->getKey());
         static::assertEquals('hoho', $doc->hihi);
-        static::assertObjectNotHasAttribute('value', $doc);
+        static::assertObjectNotHasProperty('value', $doc);
         
         // non-transactional lookup should still see the old document
         $doc = $documentHandler->getById($this->collection1->getName(), "test");
         static::assertEquals('test', $doc->getKey());
         static::assertEquals('test', $doc->value);
-        static::assertObjectNotHasAttribute('hihi', $doc);
+        static::assertObjectNotHasProperty('hihi', $doc);
         
         // now commit
         static::assertTrue($this->transactionHandler->commit($trx->getId()));
@@ -498,7 +498,7 @@ class StreamingTransactionTest extends
         $doc = $documentHandler->getById($this->collection1->getName(), "test");
         static::assertEquals('test', $doc->getKey());
         static::assertEquals('hoho', $doc->hihi);
-        static::assertObjectNotHasAttribute('value', $doc);
+        static::assertObjectNotHasProperty('value', $doc);
     }
     
     public function testTruncate()

@@ -21,7 +21,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class TransactionTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

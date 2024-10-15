@@ -14,7 +14,7 @@ namespace ArangoDBClient;
  * @property AdminHandler adminHandler
  */
 class AdminTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     public function setUp(): void
     {

@@ -30,7 +30,7 @@ function filtered(array $values)
  * @package ArangoDBClient
  */
 class StatementTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

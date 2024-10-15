@@ -19,7 +19,7 @@ namespace ArangoDBClient;
  * @package   ArangoDBClient
  */
 class FoxxBasicTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     private FoxxHandler $foxxHandler;
 

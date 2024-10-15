@@ -10,6 +10,10 @@ try {
     // turn off tracing... it's too verbose here
     unset($connectionOptions[ConnectionOptions::OPTION_TRACE]);
 
+    $connectionOptions['endpoint'] = 'tcp://172.29.80.1:8529';
+    $connectionOptions['AuthPasswd'] = 'arango';
+   // echo '<pre>',print_r($connectionOptions),'</pre>';
+  //  die();
     $connection        = new Connection($connectionOptions);
     $collectionHandler = new CollectionHandler($connection);
     $handler           = new DocumentHandler($connection);
@@ -34,7 +38,7 @@ try {
     // can test the HTTP layer
     for ($i = 0; $i < $n; ++$i) {
         $document = new Document(['value' => 'test' . $i]);
-
+        $document->set('value', 'test'.$i);
         $handler->save('test', $document);
     }
 

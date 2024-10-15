@@ -17,7 +17,7 @@ namespace ArangoDBClient;
  * @property Collection        edgeCollection
  */
 class BatchTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

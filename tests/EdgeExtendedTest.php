@@ -22,7 +22,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class EdgeExtendedTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 
@@ -185,7 +185,7 @@ class EdgeExtendedTest extends
         static::assertTrue($result);
 
         $resultingEdge = $edgeHandler->get($edgeCollection->getId(), $edgeId);
-        static::assertObjectHasAttribute('_id', $resultingEdge, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingEdge, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             'anything', $resultingEdge->labels, 'Should be :anything, is: ' . $resultingEdge->labels
@@ -242,7 +242,7 @@ class EdgeExtendedTest extends
         static::assertTrue($result);
 
         $resultingEdge = $edgeHandler->get($edgeCollection->getId(), $edgeId);
-        static::assertObjectHasAttribute('_id', $resultingEdge, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingEdge, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             null, $resultingEdge->label, 'Should be : null, is: ' . $resultingEdge->label
@@ -306,7 +306,7 @@ class EdgeExtendedTest extends
         static::assertTrue($result);
         $resultingEdge = $edgeHandler->get($edgeCollection->getId(), $edgeId);
 
-        static::assertObjectHasAttribute('_id', $resultingEdge, '_id field should exist, empty or with an id');
+        static::assertObjectHasProperty('_id', $resultingEdge, '_id field should exist, empty or with an id');
 
         static::assertEquals(
             null, $resultingEdge->label, 'Should be :null, is: ' . $resultingEdge->label

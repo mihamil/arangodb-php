@@ -18,7 +18,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class UserBasicTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 

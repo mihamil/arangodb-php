@@ -20,6 +20,7 @@ namespace ArangoDBClient;
  * @package   ArangoDBClient
  * @since     3.4
  */
+#[\AllowDynamicProperties]
 class View
 {
     /**

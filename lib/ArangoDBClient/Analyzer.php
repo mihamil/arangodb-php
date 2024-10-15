@@ -20,6 +20,7 @@ namespace ArangoDBClient;
  * @package   ArangoDBClient
  * @since     3.6
  */
+#[\AllowDynamicProperties]
 class Analyzer
 {
     /**

@@ -20,7 +20,7 @@ namespace ArangoDBClient;
  * @package ArangoDBClient
  */
 class CollectionExtendedTest extends
-    \PHPUnit_Framework_TestCase
+    EvocaTestParent
 {
     protected static $testsTimestamp;
 
@@ -393,7 +393,7 @@ class CollectionExtendedTest extends
 
         // here we check the collectionHandler->getProperties function
         $properties = $collectionHandler->getProperties($collection->getName());
-        static::assertObjectHasAttribute(
+        static::assertObjectHasProperty(
             '_waitForSync',
             $properties,
             'waiForSync field should exist, empty or with an id'
